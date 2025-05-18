@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0">
+	<link rel="stylesheet"  href="{% static 'blog/css/bootstrap.css' %}">
+	<link rel="stylesheet"  href="{% static 'blog/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}" />
+	<title>BLOG WEBSITE</title>
+	<style>
+		.banner-image {
+		  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../static/img/s2.jpeg");
+		  background-size: cover;
+		}
+		
+    #box{
+      border: white;
+      border-style: double;
+      padding: 20px;
+    }
+
+    .my-5{
+      font-size: 40px;
+      border: black;
+      border-bottom-style: double;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+    
+    #space{
+      margin-top: 20px;
+    }
+    body{
+    background-color: white;
+}
+
+.jumbo-color
+{
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.home-indent
+{
+    text-indent: 50px;
+}
+.bold
+{
+    font-weight: bold;
+}
+.about-indent
+{
+    margin-left: 100px;
+}
+.contact-margin
+{
+    margin-left: 100px;
+}
+.indent
+{
+    margin-left: 100px;
+}
+.nav-item{
+    padding: 5px 20px 5px;
+    
+}
+.nav-item:hover{
+    border-style: solid;
+    border-color: white;
+    padding: 7px 22px 7px;
+    transition: 0.4s ease-in-out;
+}
+
+	  </style>
+</head>
+<body>
+	<div>
+	  {% include 'blog/navbar.html' %}
+    {% include 'blog/img.html' %}
+  </div>
+	<div class="conatiner">
+		<div class="row">
+			<div class="col-sm-12">
+				{% block msg %}
+				{% endblock msg %}
+			</div>
+		</div>
+		<div class="row">
+			{% block side %}
+			{% endblock side %}
+
+			{% block content %}
+			{% endblock content %}
+		</div>
+	</div>
+
+
+	<script src="{% static 'blog/js/jquery.js' %}"></script>
+	<script src="{% static 'blog/js/popper.js' %}"></script>
+	<script src="{% static 'blog/js/bootstrap.js' %}"></script>
+	<script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+	<script type="text/javascript">
+		var nav = document.querySelector('nav');
+  
+		window.addEventListener('scroll', function () {
+		  if (window.pageYOffset > 100) {
+			nav.classList.add('bg-dark', 'shadow');
+		  } else {
+			nav.classList.remove('bg-dark', 'shadow');
+		  }
+		});
+	  </script>
+</body>
+</html>
+
